@@ -409,21 +409,30 @@ const images = [
   'images/photo (408).jpg'
 ];
 
-let lastIndex = -1;
+let currentIndex = -1;
 
-function getRandomImage() {
-  let newIndex;
+function getNextIndex() {
+  let nextIndex;
   do {
-    newIndex = Math.floor(Math.random() * imageList.length);
-  } while (newIndex === lastIndex);
-  lastIndex = newIndex;
-  return imageList[newIndex];
+    nextIndex = Math.floor(Math.random() * imageFilenames.length);
+  } while (nextIndex === currentIndex);
+  currentIndex = nextIndex;
+  return nextIndex;
 }
 
-function showImage() {
-  const img = document.getElementById("slideshow");
-  img.src = getRandomImage();
+function updateImage() {
+  const imgElement = document.getElementById("slideshow-image");
+  const nextIndex = getNextIndex();
+  imgElement.src = "images/" + imageFilenames[nextIndex];
 }
 
-setInterval(showImage, 6000);
-window.onload = showImage;
+// Disable right-click on entire page
+document.addEventListener("contextmenu", function (e) {
+  e.preventDefault();
+});
+
+// Start slideshow
+window.onload = function () {
+  updateImage();
+  setInterval(updateImage, 7000); // Change 7000 to another value (ms) if needed
+};
