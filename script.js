@@ -409,20 +409,21 @@ const images = [
   'images/photo (408).jpg'
 ];
 
-let currentIndex = -1;
-const intervalTime = 6000; // 6 seconds
+let lastIndex = -1;
 
-function showNextImage() {
-  let nextIndex;
+function getRandomImage() {
+  let newIndex;
   do {
-    nextIndex = Math.floor(Math.random() * images.length);
-  } while (nextIndex === currentIndex);
-
-  currentIndex = nextIndex;
-
-  const imgElement = document.getElementById("slideshow");
-  imgElement.src = "images/" + images[currentIndex];
+    newIndex = Math.floor(Math.random() * imageList.length);
+  } while (newIndex === lastIndex);
+  lastIndex = newIndex;
+  return imageList[newIndex];
 }
 
-setInterval(showNextImage, intervalTime);
-window.onload = showNextImage;
+function showImage() {
+  const img = document.getElementById("slideshow");
+  img.src = getRandomImage();
+}
+
+setInterval(showImage, 6000);
+window.onload = showImage;
