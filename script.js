@@ -99,7 +99,7 @@ const images = [
   'images/photo (98).jpg',
   'images/photo (99).jpg',
   'images/photo (100).jpg',
-    'images/photo (101).jpg',
+  'images/photo (101).jpg',
   'images/photo (102).jpg',
   'images/photo (103).jpg',
   'images/photo (104).jpg',
