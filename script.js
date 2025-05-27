@@ -406,11 +406,11 @@ const images = [
   'images/photo (405).jpg',
   'images/photo (406).jpg',
   'images/photo (407).jpg',
-  'images/photo (408).jpg',
+  'images/photo (408).jpg'
 ];
 
 let currentIndex = -1;
-const intervalTime = 6000; // 5 seconds
+const intervalTime = 6000; // 6 seconds
 
 function showNextImage() {
   let nextIndex;
