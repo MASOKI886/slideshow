@@ -421,7 +421,7 @@ function getNextIndex() {
 }
 
 function updateImage() {
-  const imgElement = document.getElementById("slideshow-image");
+  const imgElement = document.getElementById("slideshow");
   const nextIndex = getNextIndex();
   imgElement.src = "images/" + imageFilenames[nextIndex];
 }
