@@ -439,6 +439,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const imgElement = document.getElementById("slideshow-image");
 
   imgElement.addEventListener("load", () => {
+    document.getElementById("spinner").style.display = "none";
     imgElement.style.opacity = 1;
     imgElement.style.filter = "blur(0px)";
   });
