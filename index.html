@@ -6,6 +6,16 @@
   <style>
     body, html { margin: 0; padding: 0; background: black; }
     img { width: 100vw; height: 100vh; object-fit: contain; }
+     img {
+    opacity: 0;
+    filter: blur(8px);
+    transition: opacity 0.5s ease-in, filter 0.5s ease-in;
+  }
+  img.loaded {
+    opacity: 1;
+    filter: blur(0);
+    transition: opacity 1s ease-in-out;
+  }
   </style>
 <script>
   document.addEventListener("contextmenu", event => event.preventDefault());
