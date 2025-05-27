@@ -2,16 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Boudoir Slideshow</title>
-  <style>
-    body, html { margin: 0; padding: 0; background: black; }
-    img { width: 100vw; height: 100vh; object-fit: contain; }
-
-  </style>
-<script>
-  document.addEventListener("contextmenu", event => event.preventDefault());
-</script>
-  <!-- Google Analytics -->
+  <title>Slideshow</title>
+  <link rel="stylesheet" href="style.css">
+   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-N37D56SC6Q"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -22,7 +15,11 @@
   <!-- End Google Analytics -->
 </head>
 <body>
-  <img id="slideshow" src="" alt="Slideshow">
+  <div class="slideshow-container">
+    <img id="slideshow-image" src="" alt="Slideshow">
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
+
