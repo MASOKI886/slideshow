@@ -409,14 +409,8 @@ const images = [
   'images/photo (408).jpg',
 ];
 
-function randomImage() {
-  const img = document.getElementById('slideshow');
-  const index = Math.floor(Math.random() * images.length);
-  img.src = images[index];
-}
-
-randomImage();
-setInterval(randomImage, 5000);
+let currentIndex = -1;
+const intervalTime = 6000; // 5 seconds
 
 function showNextImage() {
   let nextIndex;
