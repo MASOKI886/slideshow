@@ -423,16 +423,31 @@ function getNextIndex() {
 function updateImage() {
   const imgElement = document.getElementById("slideshow-image");
   const nextIndex = getNextIndex();
-  imgElement.src = "images/" + imageFilenames[nextIndex];
+
+  // Start fade-out & blur
+  imgElement.style.opacity = 0;
+  imgElement.style.filter = "blur(10px)";
+
+  // Delay a bit to allow transition, then change image
+  setTimeout(() => {
+    imgElement.src = "images/" + imageFilenames[nextIndex];
+  }, 500);
 }
 
-// Disable right-click on the entire page
+// When image is loaded, fade it in and remove blur
+document.addEventListener("DOMContentLoaded", () => {
+  const imgElement = document.getElementById("slideshow-image");
+
+  imgElement.addEventListener("load", () => {
+    imgElement.style.opacity = 1;
+    imgElement.style.filter = "blur(0px)";
+  });
+
+  updateImage();
+  setInterval(updateImage, 5000); // 5 seconds
+});
+
+// Disable right-click
 document.addEventListener("contextmenu", function (e) {
   e.preventDefault();
 });
-
-// Start the slideshow on page load
-window.onload = function () {
-  updateImage();
-  setInterval(updateImage, 6000); // 6 seconds
-};
