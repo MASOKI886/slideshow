@@ -6,18 +6,7 @@
   <style>
     body, html { margin: 0; padding: 0; background: black; }
     img { width: 100vw; height: 100vh; object-fit: contain; }
-/* Initial blurred and transparent */
-img {
-  opacity: 0;
-  filter: blur(8px);
-  transition: opacity 1s ease-in-out, filter 1s ease-in-out;
-}
 
-/* When image fully loaded, remove blur and show */
-img.loaded {
-  opacity: 1;
-  filter: blur(0);
-}
   </style>
 <script>
   document.addEventListener("contextmenu", event => event.preventDefault());
