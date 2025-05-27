@@ -432,3 +432,28 @@ function showNextImage() {
 
 setInterval(showNextImage, intervalTime);
 window.onload = showNextImage;
+
+const img = document.getElementById('slideshow-image');
+let currentIndex = 0;
+
+function showNextImage() {
+  // Start fade-out by removing 'loaded' class
+  img.classList.remove('loaded');
+  
+  // After fade-out time (1s), change image src
+  setTimeout(() => {
+    img.src = images[currentIndex]; // set next image source
+  }, 1000);
+}
+
+// When image finishes loading
+img.onload = () => {
+  img.classList.add('loaded'); // add class to trigger fade-in & remove blur
+};
+
+// Initial call
+showNextImage();
+setInterval(() => {
+  currentIndex = (currentIndex + 1) % images.length;
+  showNextImage();
+}, 6000);  // 6 seconds total for fade + visible
