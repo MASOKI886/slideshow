@@ -444,7 +444,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   updateImage();
-  setInterval(updateImage, 5000); // 5 seconds
+  setInterval(updateImage, 6000); // 6 seconds
 });
 
 // Disable right-click
