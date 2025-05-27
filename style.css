@@ -54,10 +54,11 @@ img {
   }
 }
 
+/* On mobile, override and stretch image to full width if needed */
 @media screen and (max-width: 768px) {
   #slideshow-image {
-    width: 100%;
+    width: 100vw;
     height: auto;
-    max-height: 100%;
+    object-fit: cover;
   }
 }
