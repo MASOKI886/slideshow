@@ -434,5 +434,20 @@ document.addEventListener("contextmenu", function (e) {
 // Start the slideshow on page load
 window.onload = function () {
   updateImage();
-  setInterval(updateImage, 5000); // 5 seconds
+  setInterval(updateImage, 6000); // 6 seconds
 };
+
+//const img = document.getElementById('slideshow');
+const images = [...]; // your image URLs
+let currentIndex = 0;
+
+function showNextImage() {
+  img.classList.remove('loaded');  // remove class to start blur again
+  img.src = images[currentIndex];
+  // when image finishes loading, add the 'loaded' class to remove blur and fade in
+  img.onload = () => {
+    img.classList.add('loaded');
+  };
+
+  currentIndex = (currentIndex + 1) % images.length;
+}
