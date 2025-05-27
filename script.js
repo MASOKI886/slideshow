@@ -1,7 +1,7 @@
 const imageFilenames = [
-"photo1.jpg",
-"photo2.jpg",
-"photo3.jpg",
+  "photo1.jpg",
+  "photo2.jpg",
+  "photo3.jpg"
 ];
 
 let currentIndex = -1;
@@ -21,13 +21,13 @@ function updateImage() {
   imgElement.src = "images/" + imageFilenames[nextIndex];
 }
 
-// Disable right-click on entire page
+// Disable right-click on the entire page
 document.addEventListener("contextmenu", function (e) {
   e.preventDefault();
 });
 
-// Start slideshow
+// Start the slideshow on page load
 window.onload = function () {
   updateImage();
-  setInterval(updateImage, 7000); // Change 7000 to another value (ms) if needed
+  setInterval(updateImage, 5000); // 5 seconds
 };
