@@ -61,3 +61,22 @@ img {
     max-height: 100%;
   }
 }
+
+#fullscreen-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  z-index: 999;
+  transition: background-color 0.3s;
+}
+
+#fullscreen-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
