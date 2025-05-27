@@ -434,5 +434,5 @@ document.addEventListener("contextmenu", function (e) {
 // Start the slideshow on page load
 window.onload = function () {
   updateImage();
-  setInterval(updateImage, 7000); // 7 seconds
+  setInterval(updateImage, 6000); // 6 seconds
 };
