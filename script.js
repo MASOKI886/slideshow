@@ -1,7 +1,7 @@
 const imageFilenames = [
-"photo (1).jpg",
-"photo (2).jpg",
-"photo (3).jpg",
+"photo1.jpg",
+"photo2.jpg",
+"photo3.jpg",
 ];
 
 let currentIndex = -1;
