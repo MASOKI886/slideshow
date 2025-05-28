@@ -398,15 +398,7 @@ const imageFilenames = [
 "397.jpg",
 "398.jpg",
 "399.jpg",
-"400.jpg",
-"401.jpg",
-"402.jpg",
-"403.jpg",
-"404.jpg",
-"405.jpg",
-"406.jpg",
-"407.jpg",
-"408.jpg"
+"400.jpg"
 ];
 
 let currentIndex = -1;
