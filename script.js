@@ -445,4 +445,14 @@ document.addEventListener("contextmenu", function (e) {
   e.preventDefault();
 });
 
+document.getElementById("share-button").addEventListener("click", async () => {
+  try {
+    await navigator.share({
+      title: document.title,
+      url: window.location.href
+    });
+  } catch (err) {
+    alert("Sharing failed or not supported.");
+  }
+});
 
