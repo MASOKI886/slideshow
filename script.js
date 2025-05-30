@@ -445,14 +445,20 @@ document.addEventListener("contextmenu", function (e) {
   e.preventDefault();
 });
 
-document.getElementById("share-button").addEventListener("click", async () => {
-  try {
-    await navigator.share({
-      title: document.title,
-      url: window.location.href
-    });
-  } catch (err) {
-    alert("Sharing failed or not supported.");
+const shareBtn = document.getElementById("share-button");
+
+shareBtn.addEventListener("click", async () => {
+  if (navigator.share) {
+    try {
+      await navigator.share({
+        title: document.title,
+        url: window.location.href
+      });
+    } catch (err) {
+      console.log("Share canceled or failed", err);
+    }
+  } else {
+    alert("Sharing not supported on this device.");
   }
 });
 
