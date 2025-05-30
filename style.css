@@ -47,6 +47,16 @@ body {
 }
 
 
+.slideshow-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
 .share-button-container {
   position: absolute;
   bottom: 20px;
@@ -56,13 +66,12 @@ body {
   z-index: 10;
 }
 
-#slideshow-image:hover + .share-button-container,
-.share-button-container:hover {
+.slideshow-container:hover .share-button-container {
   opacity: 1;
 }
 
-/* For mobile: show button when user taps */
-@media (hover: none) {
+/* Always visible on mobile (no hover support) */
+@media (hover: none) and (pointer: coarse) {
   .share-button-container {
     opacity: 1;
   }
