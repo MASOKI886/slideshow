@@ -47,4 +47,24 @@ body {
 }
 
 
+.share-button-container {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 10;
+}
+
+#slideshow-image:hover + .share-button-container,
+.share-button-container:hover {
+  opacity: 1;
+}
+
+/* For mobile: show button when user taps */
+@media (hover: none) {
+  .share-button-container {
+    opacity: 1;
+  }
+}
 
