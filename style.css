@@ -47,16 +47,6 @@ body {
 }
 
 
-.slideshow-container {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-
 .share-button-container {
   position: absolute;
   bottom: 20px;
@@ -66,14 +56,26 @@ body {
   z-index: 10;
 }
 
+/* Make button look like an icon only */
+#share-button {
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+  padding: 0;
+}
+
+/* Show icon on desktop hover */
 .slideshow-container:hover .share-button-container {
   opacity: 1;
 }
 
-/* Always visible on mobile (no hover support) */
+/* Always show on mobile */
 @media (hover: none) and (pointer: coarse) {
   .share-button-container {
     opacity: 1;
   }
 }
+
 
