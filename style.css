@@ -46,6 +46,10 @@ body {
   }
 }
 
+#slideshow-container {
+  position: relative;
+}
+
 #share-button {
   position: absolute;
   bottom: 20px;
@@ -80,5 +84,6 @@ body {
   transition: opacity 0.5s;
   z-index: 10;
 }
+
 
 
