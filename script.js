@@ -444,3 +444,14 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("contextmenu", function (e) {
   e.preventDefault();
 });
+
+document.getElementById("share-button").addEventListener("click", function () {
+  navigator.clipboard.writeText(window.location.href).then(() => {
+    const toast = document.getElementById("copy-toast");
+    toast.style.opacity = "1";
+    setTimeout(() => {
+      toast.style.opacity = "0";
+    }, 2000);
+  });
+});
+
