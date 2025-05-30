@@ -444,24 +444,3 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("contextmenu", function (e) {
   e.preventDefault();
 });
-
-// Like Button Logic
-const likeBtn = document.getElementById("like-button");
-
-likeBtn.addEventListener("click", () => {
-  likeBtn.classList.add("clicked");
-  setTimeout(() => {
-    likeBtn.classList.remove("clicked");
-  }, 300);
-});
-
-// Show like button on mobile tap
-let touchTimeout;
-document.body.addEventListener("touchstart", () => {
-  document.body.classList.add("touching");
-  clearTimeout(touchTimeout);
-  touchTimeout = setTimeout(() => {
-    document.body.classList.remove("touching");
-  }, 3000); // hides again after 3 seconds
-});
-
