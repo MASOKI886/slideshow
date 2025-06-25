@@ -430,6 +430,9 @@ function updateImage() {
 document.addEventListener("DOMContentLoaded", () => {
   const imgElement = document.getElementById("slideshow-image");
 
+  // 초기 이미지 바로 설정 (빈 src 방지)
+  imgElement.src = "images/" + imageFilenames[0];
+
   imgElement.addEventListener("load", () => {
     document.getElementById("spinner").style.display = "none";
     imgElement.style.opacity = 1;
